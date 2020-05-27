@@ -22,7 +22,7 @@ const TEMPLATES = new Map([
 
 export function generateSrc(framework: Framework) {
   const extension = CUSTOM_EXTENSIONS.get(framework) || '.js';
-  const template = TEMPLATES.get(framework);
+  const template = TEMPLATES.get(framework)!;
   const templateSource = fs.readFileSync(
     path.join(__dirname, 'templates', template),
     'utf8'
