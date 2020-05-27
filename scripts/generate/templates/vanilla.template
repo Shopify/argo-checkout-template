@@ -1,4 +1,3 @@
-import React from 'react';
 import {extend, Text} from '@shopify/argo-checkout-testing';
 
 extend('Checkout::PostPurchaseCrossSell::Render', (root, input) => {
@@ -7,4 +6,6 @@ extend('Checkout::PostPurchaseCrossSell::Render', (root, input) => {
 
   root.appendChild(text);
   root.mount();
+
+  return {};
 });

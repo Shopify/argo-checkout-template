@@ -34,11 +34,11 @@ export function generateSrc(framework: Framework) {
       fs.mkdirSync(outputDirectory);
     }
 
-    const outPath = path.join(outputDirectory, `index.${extension}`);
+    const outPath = path.join(outputDirectory, `index${extension}`);
     fs.writeFileSync(outPath, templateSource);
 
-    console.log(`src/index.${extension} file was created.`);
+    console.log(`src/index${extension} file was created.`);
   } catch (error) {
-    console.error(`src/index.${extension} file could not be created: `, error);
+    console.error(`src/index${extension} file could not be created: `, error);
   }
 }
