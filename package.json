@@ -6,8 +6,12 @@
   "author": "Shopify <app-extensions@shopify.com>",
   "license": "MIT",
   "devDependencies": {
+    "@types/yargs": "^15.0.5",
     "argogogo-run": "^0.1.0",
-    "typescript": "^3.0.0"
+    "inquirer": "^7.1.0",
+    "ts-node": "^8.10.1",
+    "typescript": "^3.0.0",
+    "yargs": "^15.3.1"
   },
   "scripts": {
     "generate": "ts-node ./scripts/generate",
