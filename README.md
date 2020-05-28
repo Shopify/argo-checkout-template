@@ -15,13 +15,14 @@ If you grabbed this template directly from github:
 ```bash
 ## With npm
 npm install
-npm run generate -- --type=CROSS_SELLS
+
+npm run generate -- --type=CHECKOUT_POST_PURCHASE
 
 ## With yarn
-yarn install
-yarn generate --type=CROSS_SELLS
+yarn
+
+yarn generate --type=CHECKOUT_POST_PURCHASE
 ```
 
 ### Available extensions:
-
-- CROSS_SELLS
+ - CHECKOUT_POST_PURCHASE
