@@ -2,7 +2,7 @@
  * Extend Shopify Checkout with a custom Post Purchase user experience This
  * Shopify Checkout template provides two extension points:
  *  1. ShouldRenderPage - Called first, during the checkout process.
- *  2. Render - If requested by `ShouldRenderPage`, will be rendered after checkout
+ *  2. RenderPage - If requested by `ShouldRenderPage`, will be rendered after checkout
  *     completes
  */
 
@@ -49,19 +49,19 @@ async function getRenderPageData() {
 }
 
 /**
- * Entry point for the `Render` Extension Point
+ * Entry point for the `RenderPage` Extension Point
  *
- * Returns markup composed of Argo components.  The Render extension can
+ * Returns markup composed of Argo components.  The RenderPage extension can
  * optionally make use of data stored during `ShouldRenderPage` extension point to
  * expedite time-to-first-meaningful-paint.
  */
-render('Checkout::PostPurchase::Render', (props) => (
+render('Checkout::PostPurchase::RenderPage', (props) => (
   <PostPurchaseExtension {...props} />
 ));
 
 // Top-level React component
 function PostPurchaseExtension(
-  props: InputForRenderExtension<'Checkout::PostPurchase::Render'>
+  props: InputForRenderExtension<'Checkout::PostPurchase::RenderPage'>
 ) {
   const payload = props.storage.initialData as Payload;
   return (
