@@ -1,0 +1,6 @@
+---
+metafields:
+- namespace: my-app
+  key: first-key
+- namespace: my-app
+  key: second-key

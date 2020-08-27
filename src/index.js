@@ -5,7 +5,6 @@
  *  2. Render - If requested by `ShouldRender`, will be rendered after checkout
  *     completes
  */
-
 import React from 'react';
 import {
   extend,
@@ -23,12 +22,6 @@ import {
   TextBlock,
   TextContainer,
 } from '@shopify/argo-checkout-react';
-
-/** Define any shape or type of data */
-interface InitialState {
-  couldBe: 'anything' | 'everything';
-}
-
 /**
  * Entry point for the `ShouldRender` Extension Point.
  *
@@ -46,10 +39,9 @@ extend('Checkout::PostPurchase::ShouldRender', async ({storage}) => {
     render,
   };
 });
-
 // Simulate results of network call, etc.
 async function getRenderData() {
-  const initialState: InitialState = {
+  const initialState = {
     couldBe: 'anything',
   };
   return {
@@ -57,7 +49,6 @@ async function getRenderData() {
     initialState,
   };
 }
-
 /**
  * Entry point for the `Render` Extension Point
  *
@@ -66,13 +57,10 @@ async function getRenderData() {
  * expedite time-to-first-meaningful-paint.
  */
 render('Checkout::PostPurchase::Render', () => <App />);
-
 // Top-level React component
 export function App() {
-  const {extensionPoint, storage} = useExtensionInput<
-    'Checkout::PostPurchase::Render'
-  >();
-  const initialState = storage.initialData as InitialState;
+  const {extensionPoint, storage} = useExtensionInput();
+  const initialState = storage.initialData;
   return (
     <BlockStack>
       <CalloutBanner
@@ -80,10 +68,7 @@ export function App() {
       >
         subtext
       </CalloutBanner>
-      {/* <Layout />
-       * `500` represents `500px`
-       * `0.5` represents `50%`
-       * `1` represents `100%` */}
+
       <Layout
         media={[
           {viewportSize: 'small', sizes: [1, 1], maxInlineSize: 0.95},
