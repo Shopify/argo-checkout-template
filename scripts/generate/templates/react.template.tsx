@@ -6,7 +6,6 @@
  *     completes
  */
 
-import React from 'react';
 import {
   extend,
   render,
