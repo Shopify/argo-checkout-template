@@ -117,6 +117,7 @@ export function App() {
           </TextContainer>
           <Button
             onPress={() => {
+              // eslint-disable-next-line no-console
               console.log(`Extension point ${extensionPoint}`);
             }}
           >

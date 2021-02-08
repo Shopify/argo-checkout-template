@@ -125,6 +125,7 @@ extend('Checkout::PostPurchase::Render', (root, {extensionPoint, storage}) => {
               Button,
               {
                 onPress: () => {
+                  // eslint-disable-next-line no-console
                   console.log(`Extension point ${extensionPoint}`);
                 },
               },
