@@ -112,12 +112,6 @@ extend('Checkout::PostPurchase::Render', (root, {extensionPoint, storage}) => {
                     {},
                     'This is a non-exhaustive example, demonstrating provided UI components'
                   ),
-                  root.createComponent(Heading, {}, 'initialState'),
-                  root.createComponent(
-                    TextBlock,
-                    {},
-                    JSON.stringify(initialState)
-                  ),
                 ]),
               ]),
             ]),
@@ -126,7 +120,10 @@ extend('Checkout::PostPurchase::Render', (root, {extensionPoint, storage}) => {
               {
                 onPress: () => {
                   // eslint-disable-next-line no-console
-                  console.log(`Extension point ${extensionPoint}`);
+                  console.log(
+                    `Extension point ${extensionPoint}`,
+                    initialState
+                  );
                 },
               },
               'Log extension point to console'
