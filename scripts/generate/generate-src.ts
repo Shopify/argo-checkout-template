@@ -16,10 +16,10 @@ const CUSTOM_EXTENSIONS = new Map([
 ]);
 
 const TEMPLATES = new Map([
-  [Template.Vanilla, 'vanilla.template.js'],
-  [Template.React, 'react.template.jsx'],
-  [Template.VanillaTypescript, 'vanilla.template.ts'],
-  [Template.ReactTypescript, 'react.template.tsx'],
+  [Template.Vanilla, 'index.js'],
+  [Template.React, 'index.js'],
+  [Template.VanillaTypescript, 'index.ts'],
+  [Template.ReactTypescript, 'index.tsx'],
 ]);
 
 export const EXTENSION_TEMPLATE_MAP = new Map([
