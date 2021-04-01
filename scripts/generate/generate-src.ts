@@ -92,6 +92,7 @@ function readTemplate(type: string, template: Template) {
       getTemplateRootDirectory(),
       // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
       EXTENSION_TEMPLATE_MAP.get(type)!,
+      'src',
       // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
       TEMPLATES.get(template)!
     ),
