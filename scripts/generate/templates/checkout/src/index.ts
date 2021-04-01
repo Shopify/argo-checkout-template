@@ -11,6 +11,7 @@ extend('Checkout::Feature::Render', (root, {extensionPoint}) => {
       root.createComponent(TextField, {
         label: 'Order note',
         onChange(value) {
+          // eslint-disable-next-line no-console
           console.log(`Updated order note: ${value}`);
         },
       }),

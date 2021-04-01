@@ -15,7 +15,10 @@ function App({extensionPoint}: {extensionPoint: string}) {
       <TextBlock>Welcome to the {extensionPoint} extension!</TextBlock>
       <TextField
         label="Order note"
-        onChange={(value) => console.log(`Updated order note: ${value}`)}
+        onChange={(value) => {
+          // eslint-disable-next-line no-console
+          console.log(`Updated order note: ${value}`);
+        }}
       />
     </BlockStack>
   );
