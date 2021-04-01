@@ -23,7 +23,7 @@ const TEMPLATES = new Map([
 ]);
 
 export const EXTENSION_TEMPLATE_MAP = new Map([
-  ['POST_PURCHASE', 'post-purchase'],
+  ['CHECKOUT_POST_PURCHASE', 'post-purchase'],
   ['CHECKOUT_ARGO_EXTENSION', 'checkout'],
 ]);
 
