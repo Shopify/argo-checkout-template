@@ -43,7 +43,7 @@ export function generateSrc(type: string, template: Template) {
   const templateSource = getTemplateSrc(type, template);
   fs.writeFileSync(outPath, templateSource);
 
-  copyAdditionalFiles();
+  copyAdditionalFiles(type);
 
   log(`your extension is ready to go!`);
   log(`start by opening src/index${extension} in your editor of choice`);
@@ -73,8 +73,8 @@ function transpile(type: string, template: Template) {
   return prettier.format(output.outputText, {...options, parser: 'typescript'});
 }
 
-function copyAdditionalFiles() {
-  const filesPath = path.join(getTemplateRootDirectory(), 'files');
+function copyAdditionalFiles(type: string) {
+  const filesPath = path.join(getTemplateRootDirectory(type), 'files');
   fs.copySync(filesPath, getTargetRootDirectory());
 }
 
@@ -82,16 +82,19 @@ function getTargetRootDirectory() {
   return path.resolve(__dirname, '../../');
 }
 
-function getTemplateRootDirectory() {
-  return path.join(__dirname, 'templates');
+function getTemplateRootDirectory(type: string) {
+  return path.join(
+    __dirname,
+    'templates',
+    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+    EXTENSION_TEMPLATE_MAP.get(type)!
+  );
 }
 
 function readTemplate(type: string, template: Template) {
   return fs.readFileSync(
     path.join(
-      getTemplateRootDirectory(),
-      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-      EXTENSION_TEMPLATE_MAP.get(type)!,
+      getTemplateRootDirectory(type),
       'src',
       // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
       TEMPLATES.get(template)!
