@@ -45,9 +45,9 @@ export function generateSrc(type: string, template: Template) {
 
   copyAdditionalFiles(type);
 
-  log(`your extension is ready to go!`);
+  log(`Your extension is ready to go!`);
   log(
-    `you can start building by opening src/index${extension} in your editor of choice`
+    `You can start building by opening src/index${extension} in your editor of choice`
   );
 }
 

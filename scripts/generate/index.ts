@@ -27,7 +27,7 @@ const NICE_TEMPLATE_NAME_MAP = new Map([
     : await getTemplateIdentifier();
 
   log(
-    `creating a ${EXTENSION_TEMPLATE_MAP.get(
+    `Creating a ${EXTENSION_TEMPLATE_MAP.get(
       type
     )} extension using ${NICE_TEMPLATE_NAME_MAP.get(template)}`
   );
