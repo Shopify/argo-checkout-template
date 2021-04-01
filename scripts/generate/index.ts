@@ -44,7 +44,7 @@ function validateExtensionType(extensionPoint?: unknown) {
     return extensionPoint;
   }
 
-  throw new Error(`Unknown extension point: ${extensionPoint}`);
+  throw new Error(`Unknown extension type: ${extensionPoint}`);
 }
 
 function validateTemplateIdentifier(templateIdentifier: string): Template {
