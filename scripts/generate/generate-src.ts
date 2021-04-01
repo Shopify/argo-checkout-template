@@ -22,39 +22,46 @@ const TEMPLATES = new Map([
   [Template.ReactTypescript, 'react.template.tsx'],
 ]);
 
-export function generateSrc(Template: Template) {
-  const extension = CUSTOM_EXTENSIONS.get(Template) || '.js';
-  try {
-    const outputDirectory = path.resolve(getTargetRootDirectory(), 'src');
-    if (!fs.existsSync(outputDirectory)) {
-      fs.mkdirSync(outputDirectory);
-    }
+export const EXTENSION_TEMPLATE_MAP = new Map([
+  ['POST_PURCHASE', 'post-purchase'],
+  ['CHECKOUT_ARGO_EXTENSION', 'checkout'],
+]);
 
-    const outPath = path.join(outputDirectory, `index${extension}`);
-    const templateSource = getTemplateSrc(Template);
-    fs.writeFileSync(outPath, templateSource);
-
-    copyAdditionalFiles();
-
-    console.log(`Template was created. Start with src/index${extension}`);
-  } catch (error) {
-    console.error(`template could not be created: `, error);
-  }
+export function log(message: string) {
+  console.log(`🔭 > ${message}`);
 }
 
-function getTemplateSrc(template: Template) {
+export function generateSrc(type: string, template: Template) {
+  const extension = CUSTOM_EXTENSIONS.get(template) || '.js';
+
+  const outputDirectory = path.resolve(getTargetRootDirectory(), 'src');
+  if (!fs.existsSync(outputDirectory)) {
+    fs.mkdirSync(outputDirectory);
+  }
+
+  const outPath = path.join(outputDirectory, `index${extension}`);
+  const templateSource = getTemplateSrc(type, template);
+  fs.writeFileSync(outPath, templateSource);
+
+  copyAdditionalFiles();
+
+  log(`your extension is ready to go!`);
+  log(`start by opening src/index${extension} in your editor of choice`);
+}
+
+function getTemplateSrc(type: string, template: Template) {
   switch (template) {
     case Template.React:
-      return transpile(Template.ReactTypescript);
+      return transpile(type, Template.ReactTypescript);
     case Template.Vanilla:
-      return transpile(Template.VanillaTypescript);
+      return transpile(type, Template.VanillaTypescript);
     default:
-      return readTemplate(template);
+      return readTemplate(type, template);
   }
 }
 
-function transpile(Template: Template) {
-  const input = readTemplate(Template);
+function transpile(type: string, template: Template) {
+  const input = readTemplate(type, template);
   const output = ts.transpileModule(input, {
     compilerOptions: {
       target: ts.ScriptTarget.ES2017,
@@ -79,10 +86,15 @@ function getTemplateRootDirectory() {
   return path.join(__dirname, 'templates');
 }
 
-function readTemplate(Template: Template) {
+function readTemplate(type: string, template: Template) {
   return fs.readFileSync(
-    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-    path.join(getTemplateRootDirectory(), TEMPLATES.get(Template)!),
+    path.join(
+      getTemplateRootDirectory(),
+      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+      EXTENSION_TEMPLATE_MAP.get(type)!,
+      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+      TEMPLATES.get(template)!
+    ),
     'utf8'
   );
 }
