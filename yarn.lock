@@ -1135,19 +1135,36 @@
   resolved "https://registry.yarnpkg.com/@sewing-kit/webpack-plugin-hash-output/-/webpack-plugin-hash-output-0.0.2.tgz#a41ddef000619ac20e64513edbbfc6f28afe7905"
   integrity sha512-BF3gmC9YZf4VY5RLAc5qUbxft16O614jnTtGr8gPRbJF4y3Qz3AVSxSB8dJDldzk4AH9lTQvH0e1Wkbgp5tR8g==
 
-"@shopify/argo-checkout-react@^0.9.0":
-  version "0.9.3"
-  resolved "https://registry.yarnpkg.com/@shopify/argo-checkout-react/-/argo-checkout-react-0.9.3.tgz#a43f8a4c808b4f112b90ec37627dfb6fa5bb0fbe"
-  integrity sha512-vMFt8ssG3H/MqrUmg80S4t/zrNaHzubV2ZJ0dvoXaMHmRLbQhvYWqp3qWMexCsYmhWFyYW+lAu72rwxXgWb26w==
+"@shopify/argo-checkout-react@^0.10.0-alpha.0":
+  version "0.10.0-alpha.0"
+  resolved "https://registry.yarnpkg.com/@shopify/argo-checkout-react/-/argo-checkout-react-0.10.0-alpha.0.tgz#de980e68140465b925f1bf5f5a75d1c420b10ced"
+  integrity sha512-PoV7vlBO6fnxQmEz7QvMgtsC1/OUQdtEMeTYxT39vY29Rd8q2UDckayfpFJy8EOFbfVzSBrZLbxEGgmAHD7Rsw==
   dependencies:
+    "@remote-ui/async-subscription" "^2.0.0"
     "@remote-ui/react" "^4.0.0"
-    "@shopify/argo-checkout" "^0.9.1"
+    "@shopify/argo-checkout" "^0.10.0-alpha.0"
     "@types/react" "^17.0.0"
 
-"@shopify/argo-checkout@^0.9.0", "@shopify/argo-checkout@^0.9.1":
+"@shopify/argo-checkout@^0.10.0-alpha.0":
+  version "0.10.0-alpha.0"
+  resolved "https://registry.yarnpkg.com/@shopify/argo-checkout/-/argo-checkout-0.10.0-alpha.0.tgz#00c5e2c62d362c36dd44c9f8b5021288a359b1c4"
+  integrity sha512-U9mLOzsqxU9dWaoVifRsFP2D40Wjb6NLdzySia3QvemgM6adJLNX1dErbYnafpE/cjB9NmTCar0GaN2QD2MTiA==
+  dependencies:
+    "@remote-ui/core" "^2.0.0"
+
+"@shopify/argo-post-purchase-react@^0.9.0":
+  version "0.9.3"
+  resolved "https://registry.yarnpkg.com/@shopify/argo-post-purchase-react/-/argo-post-purchase-react-0.9.3.tgz#4778f59a217db2cc8b8f58c9ea092e8d2adafa17"
+  integrity sha512-DhUwE7rmukETGM9clVnfD9TCZC48jntP+4FmToDyhgpBKN5vc+I/VZj9d8+5oj4JnC00BeYto0TFmfSFlNOw6w==
+  dependencies:
+    "@remote-ui/react" "^4.0.0"
+    "@shopify/argo-post-purchase" "^0.9.1"
+    "@types/react" "^17.0.0"
+
+"@shopify/argo-post-purchase@^0.9.0", "@shopify/argo-post-purchase@^0.9.1":
   version "0.9.1"
-  resolved "https://registry.yarnpkg.com/@shopify/argo-checkout/-/argo-checkout-0.9.1.tgz#95e7a48333eeb27c1857c80ac90c1094a7bf6052"
-  integrity sha512-YRc6RwC8ULwKorRHRlQtyqZ+KfHw+oGKCLxLY4eZ9MpDgQaWcpvGkXS5cuA2XVpQhy7rVQngkR4VEMX96pBBJg==
+  resolved "https://registry.yarnpkg.com/@shopify/argo-post-purchase/-/argo-post-purchase-0.9.1.tgz#a55c956ea0c5204e9f727db5b23e481e74e260f9"
+  integrity sha512-gGlkXcD7fxrXSmzDcoHhRGQIByJMPjqvXBX9ZqIk9n4zf9YCK5WmWke8Ntvj5jOAtgg49/4g7lEc8C/KdwSBLA==
   dependencies:
     "@remote-ui/core" "^2.0.0"
 
