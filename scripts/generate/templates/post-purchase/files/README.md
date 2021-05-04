@@ -18,4 +18,4 @@ Until then, you can jump right into the code in the `./src` folder.
 Here are a few additional resources you might find helpful:
 
  - [Shopify Partners blog](https://www.shopify.com/partners/blog)
- - [Shopify Developers portal](https://shopify.dev/concepts/shopify-introduction)
+ - [Shopify Developers portal](https://shopify.dev)
