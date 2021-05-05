@@ -77,7 +77,7 @@ export function App() {
   return (
     <BlockStack>
       <CalloutBanner
-        title="TEMPLATE"
+        title="Post-purchase extension template"
       >
         Use this template as a starting point to build a great post-purchase extension.
       </CalloutBanner>
@@ -95,17 +95,17 @@ export function App() {
         <BlockStack>
           <Image source="https://cdn.shopify.com/s/files/1/0506/0709/6002/t/5/assets/placeholder_600x.png" />
         </BlockStack>
-        <BlockStack alignment="leading" spacing="xloose">
+        <BlockStack spacing="extraLoose">
           <TextContainer>
-            <Heading>Post-Purchase Extension</Heading>
+            <Heading>Post-purchase extension</Heading>
             <TextBlock>
               Here you can cross-sell other products, request a product review based on a previous purchase, and much more.
             </TextBlock>
             <TextBlock>
-              Learn more about <Link to="https://shopify.dev"> creating great user experiences for post-purchase offers</Link>.
+              Learn more about <Link to="https://shopify.dev" external>creating great user experiences for post-purchase offers</Link>.
             </TextBlock>
           </TextContainer>
-          <Button
+          <Button fill
             onPress={() => {
               // eslint-disable-next-line no-console
               console.log(`Extension point ${extensionPoint}`, initialState);
