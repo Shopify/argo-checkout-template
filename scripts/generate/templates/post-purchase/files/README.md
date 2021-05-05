@@ -1,6 +1,6 @@
 # Post-purchase app extension
 
-Checkout extensions allow developers to extend and customize Shopify's checkout.
+Checkout app extensions allow developers to extend and customize Shopify's checkout.
 
 With a post-purchase app extension, you can customize the experience that customers go through after completing a checkout.
 For example, you can cross-sell other products, show a survey, and much more.
