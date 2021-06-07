@@ -8,7 +8,7 @@
  *     completes
  */
 
-import {
+ import {
   extend,
   render,
   useExtensionInput,
@@ -21,6 +21,7 @@ import {
   Link,
   TextBlock,
   TextContainer,
+  View
 } from '@shopify/argo-post-purchase-react';
 
 
@@ -38,8 +39,8 @@ interface InitialState {
  * extension point.
  */
  extend('Checkout::PostPurchase::ShouldRender', async ({storage}) => {
-  const render = true;
   const initialState = await getRenderData();
+  const render = true;
 
   if (render) {
     // Saves initial state, provided to `Render` via `storage.initialData`
@@ -74,6 +75,7 @@ export function App() {
     'Checkout::PostPurchase::Render'
   >();
   const initialState = storage.initialData as InitialState;
+
   return (
     <BlockStack>
       <CalloutBanner
@@ -81,21 +83,18 @@ export function App() {
       >
         Use this template as a starting point to build a great post-purchase extension.
       </CalloutBanner>
-      {/* <Layout />
-       * `500` represents `500px`
-       * `0.5` represents `50%`
-       * `1` represents `100%` */}
       <Layout
         media={[
-          {viewportSize: 'small', sizes: [1, 1], maxInlineSize: 0.95},
-          {viewportSize: 'medium', sizes: [300, 0.5], maxInlineSize: 0.95},
-          {viewportSize: 'large', sizes: [300, 0.3], maxInlineSize: 0.95},
+          {viewportSize: 'small', sizes: [1, 30, 1], maxInlineSize: 0.95},
+          {viewportSize: 'medium', sizes: [300, 30, 0.5], maxInlineSize: 0.95},
+          {viewportSize: 'large', sizes: [400, 30, 0.33], maxInlineSize: 0.95},
         ]}
       >
-        <BlockStack>
-          <Image source="https://cdn.shopify.com/s/files/1/0506/0709/6002/t/5/assets/placeholder_600x.png" />
-        </BlockStack>
-        <BlockStack spacing="extraLoose">
+        <View>
+          <Image source="https://cdn.shopify.com/static/images/examples/img-placeholder-1120x1120.png" />
+        </View>
+        <View />
+        <BlockStack spacing="xloose">
           <TextContainer>
             <Heading>Post-purchase extension</Heading>
             <TextBlock>
@@ -105,7 +104,7 @@ export function App() {
               Learn more about <Link to="https://shopify.dev" external>creating great user experiences for post-purchase offers</Link>.
             </TextBlock>
           </TextContainer>
-          <Button fill
+          <Button submit
             onPress={() => {
               // eslint-disable-next-line no-console
               console.log(`Extension point ${extensionPoint}`, initialState);
