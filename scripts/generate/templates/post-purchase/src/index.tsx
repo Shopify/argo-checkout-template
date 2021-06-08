@@ -18,7 +18,6 @@ import {
   Heading,
   Image,
   Layout,
-  Link,
   TextBlock,
   TextContainer,
   View,
@@ -97,13 +96,6 @@ export function App() {
             <TextBlock>
               Here you can cross-sell other products, request a product review
               based on a previous purchase, and much more.
-            </TextBlock>
-            <TextBlock>
-              Learn more about{' '}
-              <Link to="https://shopify.dev" external>
-                creating great user experiences for post-purchase offers
-              </Link>
-              .
             </TextBlock>
           </TextContainer>
           <Button

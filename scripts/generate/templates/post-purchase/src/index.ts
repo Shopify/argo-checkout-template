@@ -13,7 +13,6 @@ import {
   Heading,
   Image,
   Layout,
-  Link,
   TextBlock,
   TextContainer,
   CalloutBanner,
@@ -96,18 +95,6 @@ extend('Checkout::PostPurchase::Render', (root, {extensionPoint, storage}) => {
                 {},
                 'Here you can cross-sell other products, request a product review based on a previous purchase, and much more.'
               ),
-              root.createComponent(TextBlock, {}, [
-                'Learn more about ',
-                root.createComponent(
-                  Link,
-                  {
-                    to: 'https://shopify.dev',
-                    external: true,
-                  },
-                  'creating great user experiences for post-purchase offers'
-                ),
-                '.',
-              ]),
             ]),
             root.createComponent(
               Button,
