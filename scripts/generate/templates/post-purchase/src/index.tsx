@@ -8,7 +8,7 @@
  *     completes
  */
 
- import {
+import {
   extend,
   render,
   useExtensionInput,
@@ -77,17 +77,18 @@ export function App() {
   const initialState = storage.initialData as InitialState;
 
   return (
-    <BlockStack>
+    <BlockStack spacing="loose">
       <CalloutBanner
         title="Post-purchase extension template"
       >
         Use this template as a starting point to build a great post-purchase extension.
       </CalloutBanner>
       <Layout
+        maxInlineSize={0.95}
         media={[
-          {viewportSize: 'small', sizes: [1, 30, 1], maxInlineSize: 0.95},
-          {viewportSize: 'medium', sizes: [300, 30, 0.5], maxInlineSize: 0.95},
-          {viewportSize: 'large', sizes: [400, 30, 0.33], maxInlineSize: 0.95},
+          {viewportSize: 'small', sizes: [1, 30, 1]},
+          {viewportSize: 'medium', sizes: [300, 30, 0.5]},
+          {viewportSize: 'large', sizes: [400, 30, 0.33]},
         ]}
       >
         <View>
