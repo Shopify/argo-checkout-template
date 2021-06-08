@@ -1,8 +1,8 @@
 /**
  * Extend Shopify Checkout with a custom Post Purchase user experience.
  * This template provides two extension points:
- * 
- *  1. ShouldRender - Called first, during the checkout process, when the 
+ *
+ *  1. ShouldRender - Called first, during the checkout process, when the
  *     payment page loads.
  *  2. Render - If requested by `ShouldRender`, will be rendered after checkout
  *     completes
@@ -21,15 +21,13 @@ import {
   Link,
   TextBlock,
   TextContainer,
-  View
+  View,
 } from '@shopify/argo-post-purchase-react';
-
 
 /** Define any shape or type of data */
 interface InitialState {
   couldBe: 'anything' | 'everything';
 }
-
 
 /**
  * Entry point for the `ShouldRender` Extension Point.
@@ -38,7 +36,7 @@ interface InitialState {
  * optionally allows data to be stored on the client for use in the `Render`
  * extension point.
  */
- extend('Checkout::PostPurchase::ShouldRender', async ({storage}) => {
+extend('Checkout::PostPurchase::ShouldRender', async ({storage}) => {
   const initialState = await getRenderData();
   const render = true;
 
@@ -53,12 +51,11 @@ interface InitialState {
 });
 
 // Simulate results of network call, etc.
-async function getRenderData() : Promise<InitialState> {
+async function getRenderData(): Promise<InitialState> {
   return {
     couldBe: 'anything',
   };
 }
-
 
 /**
  * Entry point for the `Render` Extension Point
@@ -78,10 +75,9 @@ export function App() {
 
   return (
     <BlockStack spacing="loose">
-      <CalloutBanner
-        title="Post-purchase extension template"
-      >
-        Use this template as a starting point to build a great post-purchase extension.
+      <CalloutBanner title="Post-purchase extension template">
+        Use this template as a starting point to build a great post-purchase
+        extension.
       </CalloutBanner>
       <Layout
         maxInlineSize={0.95}
@@ -99,13 +95,19 @@ export function App() {
           <TextContainer>
             <Heading>Post-purchase extension</Heading>
             <TextBlock>
-              Here you can cross-sell other products, request a product review based on a previous purchase, and much more.
+              Here you can cross-sell other products, request a product review
+              based on a previous purchase, and much more.
             </TextBlock>
             <TextBlock>
-              Learn more about <Link to="https://shopify.dev" external>creating great user experiences for post-purchase offers</Link>.
+              Learn more about{' '}
+              <Link to="https://shopify.dev" external>
+                creating great user experiences for post-purchase offers
+              </Link>
+              .
             </TextBlock>
           </TextContainer>
-          <Button submit
+          <Button
+            submit
             onPress={() => {
               // eslint-disable-next-line no-console
               console.log(`Extension point ${extensionPoint}`, initialState);
